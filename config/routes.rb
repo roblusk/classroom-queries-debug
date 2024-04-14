@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   #------------------------------
   # Department routes
 
-  get("/departments", { :controller => "department", :action => "index" })
+  get("/departments", { :controller => "departments", :action => "index" })
   
   get("/departments/:path_id", { :controller => "departments", :action => "show" })
 
   post("/insert_department", { :controller => "departments", :action => "create" })
 
+  # This probably needs to be routed to a different action
   get("/departments", { :controller => "departments", :action => "index" })
   
   post("/modify_department/:path_id", { :controller => "departments", :action => "update" })
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
   get("/insert_course", { :controller => "courses", :action => "create" })
 
-  get("/courses", { :controller => "courses_controller", :action => "index" })
+  get("/courses", { :controller => "courses", :action => "index" })
   
   get("/modify_course/:path_id", { :controller => "courses", :action => "update" })
 

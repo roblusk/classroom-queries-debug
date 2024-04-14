@@ -13,11 +13,11 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    @department = Department.new
-    @department.name = params.fetch("query_name")
+    department = Department.new
+    department.name = params.fetch("query_name")
 
-    if @department.valid?
-      @department.save
+    if department.valid?
+      department.save
       redirect_to("/departments", { :notice => "Department created successfully." })
     else
       redirect_to("/departments", { :notice => "Department failed to create successfully." })
